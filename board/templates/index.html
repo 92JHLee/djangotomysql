@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>TRPG 시나리오 모음</title>
+        <style>
+            div {
+              width: 100%;
+              border: 1px solid #003458;
+            }
+            div.left {
+              width: 20%;
+              float: left;
+              height:300px;
+              box-sizing: border-box;
+              background: #8977ad;
+              position:fixed;
+            }
+            div.right {
+              width: 80%;
+              float: right;
+              box-sizing: border-box;
+              background: #ece6cc;
+            }
+          </style>
+    </head>
+    <body>
+        <h1 style="text-align:center">TRPG 시나리오 모음</h1>
+        <div>
+            <div class="left">
+                <div class="container">
+                    <center><font size="10px">Login</font><br>
+                    ID : <input type="text"><br>
+                    PW : <input type="password"><br>
+                    <button type="button" class="btn btn-light">Login</button>&nbsp;<button type="button" class="btn btn-light">Join</button></center>
+                </div>
+            </div>
+            <div class="right">
+                <div class="search">
+                    Search ><input type="text" maxlength="100" size="100px" height="10">
+                    <button type="button" class="btn btn-light">Search</button></center>
+
+                </div>
+                    <div class="table_list">
+                        <table class="table" border="2" align="center">
+                            <thead>
+                            <tr>
+                                <th scope="col">No</th>
+                                <th scope="col">책이름</th>
+                                <th scope="col">시나리오명</th>
+                                <th scope="col">작가</th>
+                                <th scope="col">룰</th>
+                                <th scope="col">책가격</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for post in posts %}
+                                <tr>
+                                    <td>{{post.id}}</td>
+                                    <td>{{post.bookname}}</td>
+                                    <td>{{post.title}}</td>
+                                    <td>{{post.author}}</td>
+                                    <td>{{post.rule}}</td>
+                                    <td>{{post.price}}</td>
+                                </tr>
+                            {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+
+    </body>
+
+
+</html>
