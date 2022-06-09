@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <meta charset="utf-8">
+        <title>{{post.bookname}}</title>
+        <style>
+            div {
+              width: 100%;
+              border: 1px solid #003458;
+            }
+            div.left {
+              width: 20%;
+              float: left;
+              height:300px;
+              box-sizing: border-box;
+              background: #8977ad;
+            }
+            div.right {
+              width: 80%;
+              float: right;
+              box-sizing: border-box;
+              background: #ece6cc;
+            }
+          </style>
+    </head>
+    <body>
+        <h1 style="text-align:center"><a href="/board/">TRPG 시나리오 모음</a></h1>
+        <div>
+            <div class="left">
+                <div class="container">
+                    <center><font size="10px">Login</font><br>
+                    ID : <input type="text"><br>
+                    PW : <input type="password"><br>
+                    <button type="button" class="btn btn-light">Login</button>&nbsp;<button type="button" class="btn btn-light">Join</button></center>
+                </div>
+            </div>
+            <div class="right">
+               <div class="search">
+                    <form class="d-flex" action="/search/{{post.id}}" method="get" align="center" width="20px">
+                        <input class="form-control me-2" type="search" placeholder="검색"  name="kw">
+                    </form>
+                </div>
+
+
+                <div class="right_table">
+                    <table class="r_table" border="2" align="center">
+
+                        <tbody width="200px">
+                          <tr>
+                            <th rowspan="7">
+                            <img src="{{ post.img }}">
+                        </th>
+                          </tr>
+
+                            <tr>
+                              <th scope="col">책이름</th>
+                              <td>{{ post.bookname }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">시나리오명</th>
+                              <td>{{ post.title }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">작가</th>
+                              <td>{{ post.author }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">룰</th>
+                               <td>{{post.rule }}</td>
+                            </tr>
+                            <tr>
+                              <th scope="col">가격</th>
+                                <td>{{ post.price }}</td>
+                            </tr>
+
+                        </tbody>
+                    </table><br>
+                    <button type="button" class="btn btn-light">Edit</button>
+                </div>
+            </div>
+        </div>
+
+
+    </body>
+
+
+</html>

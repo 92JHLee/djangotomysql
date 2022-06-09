@@ -13,19 +13,23 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
-from board import views
-
 #http://127.0.0.1/ 메인페이지
 #http://127.0.0.1/board 전체 목록보이기
 #http://127.0.0.1/board/article/1 읽기
 #http://127.0.0.1/board/create 생성
+#http://127.0.0.1/board/search/1 검색결과값
 # 수정은..미래의 내가..
 
+
+from django.urls import path
+from board import views
+from board.views import search
+
 urlpatterns = [
-    path('admin/', admin.site.urls), #관리자
-    path('', include(('board.urls','board'),namespace='board')), #메인
+    path('', views.index,name='index'),
+    path('board/', views.board_list,name='board_list'),
+    path('board/article/<id>',views.article,name='article'),
+    path('board/search/<id>',views.search,name='search'),
 
 
 ]

@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><!DOCTYPE html>
 <html lang="ko">
     <head>
         <title>TRPG 시나리오 모음</title>
@@ -32,13 +36,13 @@
                     <button type="button" class="btn btn-light">Login</button>&nbsp;<button type="button" class="btn btn-light">Join</button></center>
             </div>
             <div class="right">
-                <div class="search">
-                    <form class="d-flex" action="/search/{{post.id}}" method="get" align="center" width="20px">
+               <div class="search">
+                    <form class="d-flex" action="/search/" method="get" align="center" width="20px">
                         <input class="form-control me-2" type="search" placeholder="검색"  name="kw">
                     </form>
                 </div>
-                    <div class="table_list">
-                        <table class="table" border="2" align="center">
+                <div class="table_list">
+                      <table class="table" border="2" align="center">
                             <thead>
                             <tr>
                                 <th scope="col">No</th>
@@ -52,12 +56,12 @@
                             <tbody>
                             {% for post in posts %}
                                 <tr>
-                                    <td>{{post.id}}</td>
-                                    <td><a href="/board/article/{{post.id}}"> {{post.bookname}}</a></td>
-                                    <td>{{post.title}}</td>
-                                    <td>{{post.author}}</td>
-                                    <td>{{post.rule}}</td>
-                                    <td>{{post.price}}</td>
+                                    <td>{{posts.id}}</td>
+                                    <td><a href="/board/article/{{post.id}}"> {{posts.bookname}}</a></td>
+                                    <td>{{posts.title}}</td>
+                                    <td>{{posts.author}}</td>
+                                    <td>{{posts.rule}}</td>
+                                    <td>{{posts.price}}</td>
                                 </tr>
                             {% endfor %}
 
@@ -72,4 +76,9 @@
     </body>
 
 
+</html></title>
+</head>
+<body>
+
+</body>
 </html>
